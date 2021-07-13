@@ -32,4 +32,19 @@ def rotate(img, angle, rotPoint=None):
 rotated01 = rotate(img, 45)
 cv.imshow('rotated01', rotated01)
 
+#Resizing
+resize = cv.resize(img, (500, 500), interpolation=cv.INTER_CUBIC)
+cv.imshow('Resize', resize)
+
+#Flipping
+flip = cv.flip(img, -1)
+cv.imshow('flip', flip)
+#0 - verticle
+#-1 - verticle and horizontal
+#1 - horizontal
+
+#Cropped
+cropped = img[200:400, 300:400]
+cv.imshow('cropped', cropped)
+
 cv.waitKey(0)
