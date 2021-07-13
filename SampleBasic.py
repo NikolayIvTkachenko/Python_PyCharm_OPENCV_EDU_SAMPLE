@@ -21,4 +21,16 @@ cv.imshow('Canny blur', canny)
 dilated = cv.dilate(canny, (3, 3), iterations=1)
 cv.imshow('dilated', dilated)
 
+#Erofing
+eroded = cv.erode(dilated, (3, 3), iterations=1)
+cv.imshow('eroded ', eroded )
+
+#resize
+resize = cv.resize(img, (500, 500), interpolation=cv.INTER_AREA)
+cv.imshow('resize ', resize)
+
+#cropped
+cropped = img[50:200, 200:400]
+cv.imshow('Croped',cropped )
+
 cv.waitKey(0)
