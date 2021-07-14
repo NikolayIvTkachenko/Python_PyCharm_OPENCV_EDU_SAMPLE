@@ -18,8 +18,10 @@ ret, thresh = cv.threshold(gray, 125, 255, type=cv.THRESH_BINARY)
 
 #contours, hierarchies = cv.findContours(canny, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
 contours, hierarchies = cv.findContours(thresh, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
-
-
 print(f'{len(contours)} countours found')
+
+cv.drawContours(img, contours, -1, (0, 0, 255), 2)
+cv.imshow('Contours Drawn', img)
+
 
 cv.waitKey(0)
