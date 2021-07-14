@@ -3,8 +3,8 @@ import cv2 as cv
 
 people = ['elonmusk', 'richard', 'mila']
 haar_cascade = cv.CascadeClassifier('haar/haarcascade_frontalface_default.xml')
-#features = np.load('features.npy')
-#labels = np.load('labels.npy')
+features = np.load('features.npy', allow_pickle=True)
+labels = np.load('labels.npy')
 
 face_recognizer = cv.face.LBPHFaceRecognizer_create()
 face_recognizer.read('face_trained.yml')
