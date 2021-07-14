@@ -6,7 +6,10 @@ import numpy as np
 people = ['elonmusk', 'richard', 'mila']
 DIR = r'C:\RSH-CODE\PyCharmProject\Project_opencv_edu\PhotoForTrain'
 
-haar_cascade = cv.CascadeClassifier('haar/haarcascade_profileface.xml')
+#haar_cascade = cv.CascadeClassifier('haar/haarcascade_profileface.xml')
+#haarcascade_frontalface_default
+haar_cascade = cv.CascadeClassifier('haar/haarcascade_frontalface_default.xml')
+
 
 features = []
 labels = []
@@ -41,3 +44,6 @@ labels = np.array(labels)
 
 face_recognizer = cv.face.LBPHFaceRecognizer_create()
 face_recognizer.train(features, labels)
+
+np.save('features.npy', features)
+np.save('labels.npy', labels)

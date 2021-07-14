@@ -8,7 +8,8 @@ img = cv.imread('PhotoEdu/ElonMusk.jpg')
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 #cv.imshow('gray', gray)
 
-haar_cascade = cv.CascadeClassifier('haar/haarcascade_profileface.xml')
+haar_cascade = cv.CascadeClassifier('haar/haarcascade_frontalface_default.xml')
+#haar_cascade = cv.CascadeClassifier('haar/haarcascade_profileface.xml')
 faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=3)
 
 print(f'Number of faces = {len(faces_rect)}')
