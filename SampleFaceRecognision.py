@@ -3,13 +3,13 @@ import cv2 as cv
 
 people = ['elonmusk', 'richard', 'mila']
 haar_cascade = cv.CascadeClassifier('haar/haarcascade_frontalface_default.xml')
-features = np.load('features.npy')
-labels = np.load('labels.npy')
+#features = np.load('features.npy')
+#labels = np.load('labels.npy')
 
 face_recognizer = cv.face.LBPHFaceRecognizer_create()
 face_recognizer.read('face_trained.yml')
 
-img = cv.imread('C:\RSH-CODE\PyCharmProject\Project_opencv_edu\PhotoForValidation\mila\val_mila002.jpg')
+img = cv.imread('C:\RSH-CODE\PyCharmProject\Project_opencv_edu\PhotoForValidation\mila\\val_mila002.jpg')
 
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 cv.imshow('Person', gray)
