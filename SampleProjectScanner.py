@@ -79,8 +79,10 @@ while True:
 
     if len(biggest)>0:
         imgWraped = getWarp(img, biggest)
+        imageArray = ([img, imgThres], [imgCounters, imgWraped])
+        #stackedImages = stackedImages(0.6, imageArray)
 
-
+    #cv.imshow("Stacked", stackedImages)
     cv.imshow("Result", imgCounters)
     if cv.waitKey(1) & 0xFF == ord('q'):
         break
